@@ -26,8 +26,16 @@ func main(){
 		{climate: "mountainous", name: "Innsbruck"},
 		{climate: "desert mountains", name: "Almería"},
 	}
-	fmt.Printf("Starting up data collection!")
-	fmt.Println(defaultCities)
+	for i, s := range defaultCities {
+		fmt.Println(i, s.climate)
+	}
+	var selection int
+	fmt.Println("Enter the index number of the location you wish to use")
+	fmt.Scanln(&selection)
+	var stringArgument = defaultCities[selection]
+	fmt.Println(stringArgument)
+	//fmt.Printf("Starting up data collection!")
+	//fmt.Println(defaultCities)
 }
 
 func connectToApiService() {
